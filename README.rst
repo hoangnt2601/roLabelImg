@@ -77,81 +77,14 @@ XML Format
 Installation
 ------------------
 
-Download prebuilt binaries of original 'labelImg'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  `Windows & Linux <http://tzutalin.github.io/labelImg/>`__
-
--  OS X. Binaries for OS X are not yet available. Help would be appreciated. At present, it must be `built from source <#os-x>`__.
-
-Build from source
-~~~~~~~~~~~~~~~~~
-
-Linux/Ubuntu/Mac requires at least `Python
-2.6 <http://www.python.org/getit/>`__ and has been tested with `PyQt
-4.8 <http://www.riverbankcomputing.co.uk/software/pyqt/intro>`__.
-
-
 Ubuntu Linux
 ^^^^^^^^^^^^
 
 .. code::
 
-    sudo apt-get install pyqt4-dev-tools
     sudo pip install lxml
-    make all
-    ./roLabelImg.py
-    ./roLabelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
-
-OS X
-^^^^
-
-.. code::
-
-    brew install qt qt4
-    brew install libxml2
-    make all
-    ./roLabelImg.py
-    ./roLabelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
-
-Windows
-^^^^^^^
-
-Download and setup `Python 2.6 or
-later <https://www.python.org/downloads/windows/>`__,
-`PyQt4 <https://www.riverbankcomputing.com/software/pyqt/download>`__
-and `install lxml <http://lxml.de/installation.html>`__.
-
-Open cmd and go to `roLabelImg <#roLabelimg>`__ directory
-
-.. code::
-
-    pyrcc4 -o resources.py resources.qrc
+    pip install PyQt5
     python roLabelImg.py
-    python roLabelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
-
-Use Docker
-~~~~~~~~~~~~~~~~~
-.. code::
-
-    docker pull tzutalin/py2qt4
-
-    docker run -it \
-    --user $(id -u) \
-    -e DISPLAY=unix$DISPLAY \
-    --workdir=$(pwd) \
-    --volume="/home/$USER:/home/$USER" \
-    --volume="/etc/group:/etc/group:ro" \
-    --volume="/etc/passwd:/etc/passwd:ro" \
-    --volume="/etc/shadow:/etc/shadow:ro" \
-    --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    tzutalin/py2qt4
-
-You can pull the image which has all of the installed and required dependencies.  
-
-Usage
------
 
 Steps
 ~~~~~
